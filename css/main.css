@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+body {
+	height: 100%;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+}
+header{
+	background-color: #5E5C5C
+}
+h1{
+	text-decoration: underline; 
+	text-align: center;
+	letter-spacing: 6px;
+	color: #D3D3D3;
+}
+ul{
+	list-style: none;
+	margin: 10px;
+	padding: 10px;
+}
+li{
+	border: 1px solid #ccc;
+	background: #eee;
+	padding: 5px 10px;
+	color: #000;
+}
+
+li span {
+	padding: 10px;
+}
+
+.checked {
+	text-decoration: line-through;
+	font-weight: bold;
+	color: #c00;
+}
+}
