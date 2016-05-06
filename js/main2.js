@@ -17,22 +17,43 @@ function updateItemStatus() {
 un checkbox*/
 function addNewItem(list, itemText){
   totalItem++;
-  var listItem = document.createElement("li");
-  
-  var checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
+
+  var listItem = document.createElement("li");    //crear la lista   
+  var checkbox = document.createElement("input");  //crea el input
+  checkbox.type = "checkbox";         //especifica el input a checbox
   checkbox.id = "cb_" + totalItem;
   checkbox.onclick = updateItemStatus; 
   
   var span = document.createElement ("span");
   span. id = "item_" + totalItem; 
   span.innerText = itemText;
+
+//Parte para remover la lista
+  removeAll = document.getElementById('removeAll');  //Remueve toda la lista completa
+  
+  removeButton = document.createElement('button')
+  removeButton.className = 'removeMe';
+  removeButton.innerHTML = 'Listo!';
+  removeButton.setAttribute('onclick', 'removeMe(this);');
   
   listItem.appendChild(checkbox);
   listItem.appendChild(span);
-
   list.appendChild(listItem);
+  listItem.appendChild(removeButton);
+
+  removeAll.onclick = function () {
+  list.innerHTML = '';
+};
 }
+/*Para remover la lista creada*/
+function removeMe(item){
+  var parent = item.parentElement;
+  parent.parentElement.removeChild(parent);
+}
+
+
+
+
 
 //BOTON
 var inItemText = document.getElementById("inItemText"); 
@@ -50,7 +71,4 @@ btnNew.onclick=function(){
 inItemText.focus();
 inItemText.select();
 }
-  
 var totalItem = 0
-    
-  
